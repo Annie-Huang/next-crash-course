@@ -25,7 +25,9 @@ C:\react\next-crash-course>npm run start    << run production in your local mach
 Anything in the public folder can be directly access, e.g.
 http://localhost:3000/favicon.ico
 
-
+Convention:
+use lower case for pages
+use Upper case for components.
 
 
 -----------------
