@@ -42,6 +42,10 @@ info  - Collecting page data ...ids= [
 ]
 And in C:\react\next-crash-course\out\article, it got 100 files, 1.html - 100.html
 
+C:\react\next-crash-course>serve -s out -p 8000     << I already got serve installed globally.
+You then can open http://localhost:8000
+
+
 -------------------------
 
 
