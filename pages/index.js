@@ -8,7 +8,9 @@ export default function Home({ articles }) {
         <title>WebDev News</title>
         <meta name='keywords' content='web development, programming'></meta>
       </Head>
-      <h1>Welcome to Next</h1>
+      {articles.map((article) => (
+        <h3>{article.title}</h3>
+      ))}
     </div>
   );
 }
