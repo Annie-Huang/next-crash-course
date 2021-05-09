@@ -5,9 +5,27 @@ https://github.com/Annie-Huang/next-crash-course
 
 https://nextjs.org/
 https://nextjs.org/docs/getting-started
+
+====================================================================
+TODO:
+1: Try to use styled-component into Next.js:
+https://medium.com/swlh/server-side-rendering-styled-components-with-nextjs-1db1353e915e
+https://buttercms.com/blog/next-js-tutorial-blog-styled-components
+https://styled-components.com/docs/advanced
+https://github.com/vercel/next.js/tree/master/examples
+https://github.com/vercel/next.js/blob/master/examples/with-styled-components/pages/_document.js
+https://github.com/vercel/next.js/tree/master/examples/with-styled-components
 ====================================================================
 
 C:\react>npx create-next-app next-crash-course
+
+C:\react\next-crash-course>npm run dev      << run dev node, You need to click to http://localhost:3000/ It does not auto open one.
+C:\react\next-crash-course>npm run start    << run production in your local machine, should do it after running npm run build
+
+Anything in the public folder can be directly access, e.g.
+http://localhost:3000/favicon.ico
+
+
 
 
 -----------------
