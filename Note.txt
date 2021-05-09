@@ -45,6 +45,9 @@ And in C:\react\next-crash-course\out\article, it got 100 files, 1.html - 100.ht
 C:\react\next-crash-course>serve -s out -p 8000     << I already got serve installed globally.
 You then can open http://localhost:8000
 
+C:\react\next-crash-course\pages\api\articles\index.js
+Things place into the /pages/api/articles will automatically be access through:
+http://localhost:3000/api/articles
 
 -------------------------
 
