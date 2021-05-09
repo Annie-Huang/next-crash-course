@@ -6,6 +6,7 @@ https://github.com/Annie-Huang/next-crash-course
 https://nextjs.org/
 https://nextjs.org/docs/getting-started
 https://nextjs.org/docs/advanced-features/custom-document
+https://nextjs.org/docs/basic-features/data-fetching
 
 ====================================================================
 TODO:
@@ -32,6 +33,17 @@ use Upper case for components.
 
 If you want to modify anything in the head, do it in <Head> (in index.js and about.js) as it's from import Head from 'next/head';
 If you want to edit anything in the document, do it in _document.js
+
+Fetch data (https://nextjs.org/docs/basic-features/data-fetching):
+getStaticProps:
+    allow us to fetch it at build time
+getServerSideProps:
+    https://nextjs.org/docs/basic-features/data-fetching#getserversideprops-server-side-rendering
+    fetch data on every request which will be a big slower.
+getStaticPaths
+    https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
+    dynamically generate paths based on the data we're fetching.
+
 
 -----------------
 Lecture notes:
