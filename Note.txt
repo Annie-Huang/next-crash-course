@@ -7,6 +7,7 @@ https://nextjs.org/
 https://nextjs.org/docs/getting-started
 https://nextjs.org/docs/advanced-features/custom-document
 https://nextjs.org/docs/basic-features/data-fetching
+https://www.npmjs.com/package/next-seo
 
 ====================================================================
 TODO:
@@ -19,6 +20,7 @@ https://github.com/vercel/next.js/blob/master/examples/with-styled-components/pa
 https://github.com/vercel/next.js/tree/master/examples/with-styled-components
 
 2: Try to use typescript into Next.js:
+
 ====================================================================
 
 C:\react>npx create-next-app next-crash-course
