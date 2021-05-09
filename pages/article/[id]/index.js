@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 
+// Data file that it makes the call underneath is: http://localhost:3000/_next/data/development/article/1.json
 const article = ({ article }) => {
   // const router = useRouter();
   // const { id } = router.query;

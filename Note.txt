@@ -49,6 +49,14 @@ C:\react\next-crash-course\pages\api\articles\index.js
 Things place into the /pages/api/articles will automatically be access through:
 http://localhost:3000/api/articles
 
+http://localhost:3000/
+http://localhost:3000/article/1
+    Data that it is trying to fetch: http://localhost:3000/_next/data/development/article/1.json
+
+http://localhost:3000/api/articles
+http://localhost:3000/api/articles/1    << Found data.
+http://localhost:3000/api/articles/5    << 404
+
 -------------------------
 
 
