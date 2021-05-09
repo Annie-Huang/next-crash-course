@@ -45,6 +45,7 @@ getServerSideProps:
 getStaticPaths
     https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
     dynamically generate paths based on the data we're fetching.
+You can replace "getServerSideProps" with "getStaticProps + getStaticPaths"
 
 
 -----------------

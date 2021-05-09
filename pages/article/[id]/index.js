@@ -16,7 +16,25 @@ const article = ({ article }) => {
   );
 };
 
-export const getServerSideProps = async (context) => {
+/* Using getStaticProps will make it much more faster than getServerSideProps because it's not
+   dynamically generated:
+*/
+// export const getServerSideProps = async (context) => {
+//   const res = await fetch(
+//     `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
+//   );
+//
+//   const article = await res.json();
+//
+//   return {
+//     props: {
+//       article,
+//     },
+//   };
+// };
+
+// This will get things from the params.id when on request.
+export const getStaticProps = async (context) => {
   const res = await fetch(
     `https://jsonplaceholder.typicode.com/posts/${context.params.id}`
   );
@@ -27,6 +45,24 @@ export const getServerSideProps = async (context) => {
     props: {
       article,
     },
+  };
+};
+
+// This will get every post from the /posts URL.
+// You can go directly http://localhost:3000/article/20 to fetch the data.
+export const getStaticPaths = async () => {
+  const res = await fetch(`https://jsonplaceholder.typicode.com/posts`);
+
+  const articles = await res.json();
+  const ids = articles.map((article) => article.id);
+  const paths = ids.map((id) => ({ params: { id: id.toString() } }));
+
+  console.log('ids=', ids);
+  console.log('paths=', paths);
+
+  return {
+    paths,
+    fallback: false,
   };
 };
 
