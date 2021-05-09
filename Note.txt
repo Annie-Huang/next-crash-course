@@ -1,0 +1,31 @@
+Next.js Crash Course 2021 (https://www.youtube.com/watch?v=mTz0GXj8NN0)
+
+https://github.com/bradtraversy/next-crash-course
+https://github.com/Annie-Huang/next-crash-course
+
+https://nextjs.org/
+https://nextjs.org/docs/getting-started
+====================================================================
+
+C:\react>npx create-next-app next-crash-course
+
+
+-----------------
+Lecture notes:
+
+What is Next.js?
+Next is a React frontend development web framework created by Vercel (formerly Zeit)
+that enables functionality such as server-side rendering and static site generation
+
+Server-Side Rendering:
+Unlike a traditional React app where the entire application is loaded and rendered on the client,
+Next.js allows the first page laod to be rendered by the server, which is great for SEO & performance.
+
+Other Next.js Benefits:
+Easy page routing
+API Routes
+Out of the box TypeScript and Sass
+Static site generation (next export)
+Easy deployment
+
+
