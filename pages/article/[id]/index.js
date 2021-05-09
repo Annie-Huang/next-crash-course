@@ -1,6 +1,7 @@
 import Link from 'next/link';
 import { useRouter } from 'next/router';
 import { server } from '../../../config';
+import Meta from '../../../components/Meta';
 
 // Data file that it makes the call underneath is: http://localhost:3000/_next/data/development/article/1.json
 const article = ({ article }) => {
@@ -10,6 +11,7 @@ const article = ({ article }) => {
 
   return (
     <>
+      <Meta title={article.title} description={article.excerpt} />
       <h1>{article.title}</h1>
       <p>{article.body}</p>
       <br />
