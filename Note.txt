@@ -17,6 +17,8 @@ https://styled-components.com/docs/advanced
 https://github.com/vercel/next.js/tree/master/examples
 https://github.com/vercel/next.js/blob/master/examples/with-styled-components/pages/_document.js
 https://github.com/vercel/next.js/tree/master/examples/with-styled-components
+
+2: Try to use typescript into Next.js:
 ====================================================================
 
 C:\react>npx create-next-app next-crash-course
