@@ -26,6 +26,25 @@ C:\react>npx create-next-app next-crash-course
 C:\react\next-crash-course>npm run dev      << run dev node, You need to click to http://localhost:3000/ It does not auto open one.
 C:\react\next-crash-course>npm run start    << run production in your local machine, should do it after running npm run build
 
+C:\react\next-crash-course>npm run build
+Create the out folder which is the static site. You can see it fetches all the data to create the site.
+You can see while it's building:
+info  - Collecting page data ...ids= [
+   1,  2,  3,   4,  5,  6,  7,  8,  9, 10, 11, 12,
+  13, 14, 15,  16, 17, 18, 19, 20, 21, 22, 23, 24,
+  25, 26, 27,  28, 29, 30, 31, 32, 33, 34, 35, 36,
+  37, 38, 39,  40, 41, 42, 43, 44, 45, 46, 47, 48,
+  49, 50, 51,  52, 53, 54, 55, 56, 57, 58, 59, 60,
+  61, 62, 63,  64, 65, 66, 67, 68, 69, 70, 71, 72,
+  73, 74, 75,  76, 77, 78, 79, 80, 81, 82, 83, 84,
+  85, 86, 87,  88, 89, 90, 91, 92, 93, 94, 95, 96,
+  97, 98, 99, 100
+]
+And in C:\react\next-crash-course\out\article, it got 100 files, 1.html - 100.html
+
+-------------------------
+
+
 Anything in the public folder can be directly access, e.g.
 http://localhost:3000/favicon.ico
 
