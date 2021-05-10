@@ -1,4 +1,5 @@
 Next.js Crash Course 2021 (https://www.youtube.com/watch?v=mTz0GXj8NN0)
+Client-Side VS Server-Side Rendering - Data Fetching with Next.js (https://www.youtube.com/watch?v=f1rF9YKm1Ms)
 
 https://github.com/bradtraversy/next-crash-course
 https://github.com/Annie-Huang/next-crash-course
@@ -82,6 +83,7 @@ getStaticPaths
     https://nextjs.org/docs/basic-features/data-fetching#getstaticpaths-static-generation
     dynamically generate paths based on the data we're fetching.
 You can replace "getServerSideProps" with "getStaticProps + getStaticPaths"
+(Also see the below notes)
 
 
 -----------------
@@ -101,5 +103,96 @@ API Routes
 Out of the box TypeScript and Sass
 Static site generation (next export)
 Easy deployment
+
+
+---------------
+Lecture notes:
+From Client-Side VS Server-Side Rendering - Data Fetching with Next.js
+
+Routing 'next/router'
+Image Optimization 'next/image'
+Fast Refresh
+Static Asset 'public/'
+Build-in CSS Support (css/scss)
+API Routes 'pages/api/user.js'
+TypeScript Support
+Code Splitting & Bundling
+
+Data fetch:
+CSR (Client-Side Rendering)     --> getStaticPaths
+SSR (Server-Side Rendering)     --> getServerSideProps
+SSG (Static-Site Generation)    --> getStaticProps
+ISR (Incremental Static Regeneration)
+
+ISR:
+export async function getStaticProps(context) {
+  const res = await fetch(`https://.../products`);
+  const data = await res.json()
+
+  return {
+    props: {
+      products: data.products
+    },
+    revalidate: 60 // seconds       <-------- This part, will refetch every 60 seconds
+  }
+}
+
+Page Path Depends on External Data
+// pages/posts/[id].js
+export async function getStaticPaths() {
+  const res = await fetch(`https://.../posts`);
+  const posts = await res.json();
+
+  const paths = posts.map((post) => ({
+    params: { id: post },
+  }));
+
+  return {
+    props: {
+      paths,
+      fallback: false, // true, false or 'blocking'. false means if it cannot find the data, return a 404
+    },
+  };
+}
+
+Server-side Rendering: The HTML is generated on each request
+Server-side Rendering with data: On each request, the data is fetched and the HTML is generated
+// pages/index.js
+function Home({ products }) {
+  return (
+    <ul>
+      {products.map((product) => (
+        <li>{product.title}</li>
+      ))}
+    </ul>
+  );
+}
+export async function getServerSideProps(context) {
+  const res = await fetch(`https://.../products`);
+  const data = await res.json();
+
+  return {
+    props: {
+      products: data.products,
+    },
+  };
+}
+
+Static Generation without Data + Fetch Data on the Client-Side
+import useSWR from 'swr'
+function Profile() {
+  const {data, error} = useSWR('/api/user', fetcher);
+
+  if (error) return <div>failed to load</div>;
+  if (!data) return <div>loading...</div>;          <---------- This from server side static generation
+  return <div>hello {data.name}!</div>              <---------- This is from client side request on data.
+}
+
+Next.js is a hybrid framework. You can choose which pre-rendering from to use for each page.
+
+
+
+
+
 
 
