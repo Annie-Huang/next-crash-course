@@ -138,7 +138,7 @@ export async function getStaticProps(context) {
 }
 
 Page Path Depends on External Data
-// pages/posts/[id].js
+// pages/article/[id].js
 export async function getStaticPaths() {
   const res = await fetch(`https://.../posts`);
   const posts = await res.json();
